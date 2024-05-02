@@ -36,4 +36,120 @@ button {
 body {
   min-height: 100vh;
   font-family: "Work Sans", sans-serif;
+  background: $color2;
+  background-image: url(./assets/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include device(desktop) {
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+  }
 }
+
+.container {
+  background-color: $color1;
+  border-radius: 8px;
+  max-width: 327px;
+  padding: 24px;
+  @include device(desktop) {
+    max-width: 600px;
+    padding: 40px;
+  }
+}
+
+.container__title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  @include device(desktop) {
+    margin-bottom: 32px;
+  }
+}
+
+.container__title {
+  @include device(desktop) {
+    font-size: map-get($fonts, "$large");
+  }
+}
+
+.title__img {
+  max-width: 24px;
+  @include device(desktop) {
+    max-width: 40px;
+  }
+}
+
+.container__faq {
+  dt {
+    color: $color5;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: 225px auto;
+    gap: 24px;
+    align-items: center;
+    // margin-bottom: 24px;
+    &:not(:last-of-type) {
+      margin-bottom: 24px;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-image: url(./assets/images/icon-plus.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+    &:hover {
+      color: $color4;
+    }
+    &.active {
+      margin-bottom: 24px;
+      &::after {
+        background-image: url(./assets/images/icon-minus.svg);
+      }
+    }
+    @include device(desktop) {
+      grid-template-columns: 449px auto;
+      font-size: map-get($fonts, "$medium");
+    }
+  }
+  
+  dd {
+    color: $color3;
+    line-height: 1.5;
+    font-size: map-get($fonts, "$xsmall");
+    display: none;
+    &.active {
+      display: block;
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+    }
+    @include device(desktop) {
+    font-size: map-get($fonts, "$small");
+    line-height: 1.5;
+    &.active {
+      &:not(:last-of-type) {
+        margin-bottom: 24px;
+      }
+    }
+    }
+  }
+  
+  hr {
+    border-top: 1px solid #F8EEFF;
+    margin-bottom: 20px;
+    @include device(desktop) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+
+

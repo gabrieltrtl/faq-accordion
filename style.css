@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Work Sans", sans-serif;
+  background: #F8EEFF;
+  background-image: url(./assets/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 75rem) {
+  body {
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+  }
+}
+
+.container {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  max-width: 327px;
+  padding: 24px;
+}
+@media (min-width: 75rem) {
+  .container {
+    max-width: 600px;
+    padding: 40px;
+  }
+}
+
+.container__title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+@media (min-width: 75rem) {
+  .container__title-wrapper {
+    margin-bottom: 32px;
+  }
+}
+
+@media (min-width: 75rem) {
+  .container__title {
+    font-size: 56px;
+  }
+}
+
+.title__img {
+  max-width: 24px;
+}
+@media (min-width: 75rem) {
+  .title__img {
+    max-width: 40px;
+  }
+}
+
+.container__faq dt {
+  color: #301534;
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: 225px auto;
+  gap: 24px;
+  align-items: center;
+}
+.container__faq dt:not(:last-of-type) {
+  margin-bottom: 24px;
+}
+.container__faq dt::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url(./assets/images/icon-plus.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.container__faq dt:hover {
+  color: #AD28EB;
+}
+.container__faq dt.active {
+  margin-bottom: 24px;
+}
+.container__faq dt.active::after {
+  background-image: url(./assets/images/icon-minus.svg);
+}
+@media (min-width: 75rem) {
+  .container__faq dt {
+    grid-template-columns: 449px auto;
+    font-size: 18px;
+  }
+}
+.container__faq dd {
+  color: #8B6990;
+  line-height: 1.5;
+  font-size: 14px;
+  display: none;
+}
+.container__faq dd.active {
+  display: block;
+}
+.container__faq dd.active:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+@media (min-width: 75rem) {
+  .container__faq dd {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .container__faq dd.active:not(:last-of-type) {
+    margin-bottom: 24px;
+  }
+}
+.container__faq hr {
+  border-top: 1px solid #F8EEFF;
+  margin-bottom: 20px;
+}
+@media (min-width: 75rem) {
+  .container__faq hr {
+    margin-bottom: 24px;
+  }
+}/*# sourceMappingURL=style.css.map */
